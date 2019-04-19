@@ -1,39 +1,78 @@
 <html>
+<html>
+<body>
 <body>
 <div style="overflow-x: auto;">
-  test
+<div style="overflow-x: auto;">
+Date : ###DATE###
+Date : Fri Apr 19 17:25:38 IST 2019
+<table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList">
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList">
 </table>
+</table>
+<table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList1">
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList1">
 </table>
+</table>
+</div>
 </div>
 </body>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
+<script> 
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
 var list = ['MANAPPURAM','JINDALSTEL','INDIGO','DHFL','NESTLEIND','PVR','TORNTPHARM','KOTAKBANK','RECLTD','EQUITAS'];
+var list = [#############];
+$('#resultsList').sheetrock({
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
-  query: 'select B,C,F,G,H,I,M where B is not null ',
-  callback: function (error, options, response) {
-   $.each(list, function( index, value ) {
-    $("td:contains("+value+")").css('color','green')    
-   });
-  }
-});
-
-mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1mg_FlBlPNeMDgAd-fucmhJvgFbDuT9tmdgX8t4O2__c/edit#gid=0';
-$('#resultsList1').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,I,M where B is not null ',
+  query: 'select B,C,F,G,H,I,M where B is not null ',
+  callback: function (error, options, response) {
   callback: function (error, options, response) {
    $.each(list, function( index, value ) {
+   $.each(list, function( index, value ) {
+    $("td:contains("+value+")").css('color','green')    
     $("td:contains("+value+")").css('color','green')    
    });
+   });
+  }
   }
 });
+});
+
+
+mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1mg_FlBlPNeMDgAd-fucmhJvgFbDuT9tmdgX8t4O2__c/edit#gid=0';
+mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1mg_FlBlPNeMDgAd-fucmhJvgFbDuT9tmdgX8t4O2__c/edit#gid=0';
+$('#resultsList1').sheetrock({
+$('#resultsList1').sheetrock({
+  url: mySpreadsheet,
+  url: mySpreadsheet,
+  query: 'select B,C,F,G,H,I,M where B is not null ',
+  query: 'select B,C,F,G,H,I,M where B is not null ',
+  callback: function (error, options, response) {
+  callback: function (error, options, response) {
+   $.each(list, function( index, value ) {
+   $.each(list, function( index, value ) {
+    $("td:contains("+value+")").css('color','green')    
+    $("td:contains("+value+")").css('color','green')    
+   });
+   });
+  }
+  }
+});
+});
 </script>
+</script>
+</html>
 </html>
