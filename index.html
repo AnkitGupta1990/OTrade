@@ -1,7 +1,7 @@
 <html>
 <body>
 <div style="overflow-x: auto;">
-Date : Fri Apr 19 17:28:58 IST 2019
+Date : Mon Apr 22 13:45:04 IST 2019
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList">
 </table>
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList1">
@@ -14,13 +14,19 @@ Date : Fri Apr 19 17:28:58 IST 2019
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['MANAPPURAM','JINDALSTEL','INDIGO','DHFL','NESTLEIND','PVR','TORNTPHARM','KOTAKBANK','RECLTD','EQUITAS'];
+var list = ['MANAPPURAM###PE###125.0','JINDALSTEL###PE###185.0','INDIGO###PE###1580.0','DHFL###PE###170.0','NESTLEIND###PE###11100.0','PVR###CE###1720.0','TORNTPHARM###CE###1840.0','KOTAKBANK###CE###1400.0','RECLTD###CE###151.5','EQUITAS###CE###137.5'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,I,M where B is not null ',
   callback: function (error, options, response) {
    $.each(list, function( index, value ) {
-    $("td:contains("+value+")").css('color','green')    
+    var valArr = value.split("###");
+    var clor = "green";
+    if(valArr[1] == 'PE') {
+     clor = "red";
+    }
+    $("#resultsList td:contains("+valArr[0]+")").css('color',clor);
+    $("#resultsList td:contains("+valArr[0]+")").html(valArr[0] + ' ' + valArr[1] + ' ' + valArr[2]);   
    });
   }
 });
@@ -31,7 +37,13 @@ $('#resultsList1').sheetrock({
   query: 'select B,C,F,G,H,I,M where B is not null ',
   callback: function (error, options, response) {
    $.each(list, function( index, value ) {
-    $("td:contains("+value+")").css('color','green')    
+    var valArr = value.split("###");
+    var clor = "green";
+    if(valArr[1] == 'CE') {
+     clor = "red";
+    }
+    $("#resultsList1 td:contains("+valArr[0]+")").css('color',clor);
+    $("#resultsList1 td:contains("+valArr[0]+")").html(valArr[0] + ' ' + valArr[1] + ' ' + valArr[2]);  
    });
   }
 });
