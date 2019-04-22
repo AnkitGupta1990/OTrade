@@ -1,10 +1,12 @@
 <html>
-<meta http-equiv="refresh" content="5; URL=https://sad-albattani-5978dc.netlify.com/">
 <body>
 <div style="overflow-x: auto;">
-Date : Mon Apr 22 14:56:27 IST 2019
+Last Stocks Refresh : Mon Apr 22 17:58:01 IST 2019
+<div>Last Price Refresh : <span id="priceUpdateTime"></span></div>
+CE
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList">
 </table>
+PE
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList1">
 </table>
 </div>
@@ -15,10 +17,10 @@ Date : Mon Apr 22 14:56:27 IST 2019
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['MANAPPURAM###PE###125.0','JINDALSTEL###PE###185.0','INDIGO###PE###1580.0','DHFL###PE###170.0','NESTLEIND###PE###11100.0','PVR###CE###1720.0','TORNTPHARM###CE###1840.0','KOTAKBANK###CE###1400.0','RECLTD###CE###151.5','EQUITAS###CE###137.5'];
+var list = ['BHARATFIN###PE###1100.0','RELIANCE###PE###1380.0','LICHSGFIN###PE###510.0','INDIGO###PE###1540.0','YESBANK###PE###250.0','BHARTIARTL###CE###350.0','REPCOHOME###CE###440.0','TATAGLOBAL###CE###210.0','COALINDIA###CE###255.0','AMBUJACEM###CE###235.0'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
-  query: 'select B,C,F,G,H,I,M where B is not null ',
+  query: 'select B,C,F,G,H,M where B is not null ',
   callback: function (error, options, response) {
    $.each(list, function( index, value ) {
     var valArr = value.split("###");
@@ -29,13 +31,15 @@ $('#resultsList').sheetrock({
     $("#resultsList td:contains("+valArr[0]+")").css('color',clor);
     $("#resultsList td:contains("+valArr[0]+")").html(valArr[0] + ' ' + valArr[1] + ' ' + valArr[2]);   
    });
+   $("#priceUpdateTime").html($("#resultsList tr:nth-child(2) td:last-child").html());
+   $("#resultsList th:last-child, #resultsList td:last-child").remove();
   }
 });
 
 mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1mg_FlBlPNeMDgAd-fucmhJvgFbDuT9tmdgX8t4O2__c/edit#gid=0';
 $('#resultsList1').sheetrock({
   url: mySpreadsheet,
-  query: 'select B,C,F,G,H,I,M where B is not null ',
+  query: 'select B,C,F,G,H,M where B is not null ',
   callback: function (error, options, response) {
    $.each(list, function( index, value ) {
     var valArr = value.split("###");
@@ -46,6 +50,8 @@ $('#resultsList1').sheetrock({
     $("#resultsList1 td:contains("+valArr[0]+")").css('color',clor);
     $("#resultsList1 td:contains("+valArr[0]+")").html(valArr[0] + ' ' + valArr[1] + ' ' + valArr[2]);  
    });
+   $("#priceUpdateTime").html($("#resultsList1 tr:nth-child(2) td:last-child").html());
+   $("#resultsList1 th:last-child, #resultsList1 td:last-child").remove();
   }
 });
 </script>
