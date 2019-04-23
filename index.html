@@ -1,7 +1,7 @@
 <html>
 <body>
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Mon Apr 22 18:13:33 IST 2019
+Last Stocks Refresh : Tue Apr 23 17:58:20 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="location.reload()">Refresh</button></div>
 CE
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="resultsList">
@@ -17,7 +17,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['BHARATFIN###PE###1100.0','RELIANCE###PE###1380.0','LICHSGFIN###PE###510.0','INDIGO###PE###1540.0','YESBANK###PE###250.0','BHARTIARTL###CE###350.0','REPCOHOME###CE###440.0','TATAGLOBAL###CE###210.0','COALINDIA###CE###255.0','AMBUJACEM###CE###235.0'];
+var list = ['SUNTV###PE###600.0','MARUTI###PE###7300.0','INDUSINDBK###PE###1680.0','M&M###PE###670.0','BHARTIARTL###PE###340.0','ONGC###CE###159.0','M&MFIN###CE###420.0','VGUARD###CE###225.0','COALINDIA###CE###255.0','LUPIN###CE###840.0'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
