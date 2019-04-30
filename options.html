@@ -28,9 +28,9 @@ $.each(stocks,function(index, value) {
 	  dataType: "json",
 	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+query,
 	  success: function(msg) {
-	     var open = JSON.parse(msg).data[0].openPrice;
-             var low = JSON.parse(msg).data[0].lowPrice;
-	     var current = JSON.parse(msg).data[0].lastPrice;
+	     var open = msg.data[0].openPrice;
+             var low = msg.data[0].lowPrice;
+	     var current = msg.data[0].lastPrice;
              $("#btw").html(current);
              if(low >= open) {
 		value.push(current,open,low);
