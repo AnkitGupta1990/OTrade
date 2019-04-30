@@ -31,7 +31,7 @@ $.each(stocks,function(index, value) {
 	     var open = msg.data[0].openPrice;
              var low = msg.data[0].lowPrice;
 	     var current = msg.data[0].lastPrice;
-             $("#btw").html(current);
+             $("#btw").html('success : ' + current);
              if(low >= open) {
 		value.push(current,open,low);
 		out_stocks.push(value);
@@ -40,7 +40,7 @@ $.each(stocks,function(index, value) {
 	     }
 	  },
 	  error:function (xhr, ajaxOptions, thrownError){
-	     alert(xhr.status);
+	     $("#btw").html('error : '+xhr.status);
 	  }
 	});
 });
