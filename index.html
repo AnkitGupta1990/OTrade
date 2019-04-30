@@ -32,12 +32,12 @@ $.ajax({
      alert(msg.valid)
   },
   error:function (xhr, ajaxOptions, thrownError){
-     alert(xhr.status);
+     $('#brw').html(xhr.status);
   }
 });
 });
   
-  $('#brw').html(Object.keys(jQuery.browser)[0]);
+  //$('#brw').html(Object.keys(jQuery.browser)[0]);
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
 var list = ['NMDC###PE###100.0','HINDZINC###PE###275.0','BHEL###PE###73.0','L&TFH###PE###137.5','BSOFT###PE###95.0','UPL###CE###950.0','DRREDDY###CE###2900.0','PCJEWELLER###CE###135.0','RAMCOCEM###CE###780.0','PAGEIND###CE###24000.0'];
 $('#resultsList').sheetrock({
