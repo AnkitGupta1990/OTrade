@@ -1,5 +1,6 @@
 <html>
 <body>
+<div id="btw"></div>
 CE
 <table border='1' style='border-collapse:collapse;font-size:12px;' width="100%" cellpadding='2' id="ceList">
 <thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th></tr></thead>
@@ -22,17 +23,28 @@ var stocks = [['ACC','CE','1640.00'],['ADANIENT','CE','135.00'],['ADANIPORTS','C
 var out_stocks = [];
 $.each(stocks,function(index, value) {
 	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
-
-	var response = '{"valid":"true","tradedDate":"26APR2019","eqLink":"\/live_market\/dynaContent\/live_watch\/get_quote\/GetQuote.jsp?symbol=ADANIENT","data":[{"annualisedVolatility":"49.21","bestBuy":"-3,282.01","totalSellQuantity":"5,08,000","vwap":"6.52","clientWisePositionLimits":"2758466","optionType":"CE","highPrice":"7.80","dailyVolatility":"2.58","bestSell":"-3,256.14","marketLot":"4000","sellQuantity5":"28,000","marketWidePositionLimits":"55169320","sellQuantity4":"12,000","sellQuantity3":"8,000","sellQuantity2":"12,000","underlying":"ADANIENT","sellQuantity1":"12,000","pChange":"-26.35","premiumTurnover":"9.39","totalBuyQuantity":"5,88,000","turnoverinRsLakhs":"210.99","changeinOpenInterest":"64,000","strikePrice":"140.00","openInterest":"1,60,000","buyPrice2":"6.00","buyPrice1":"6.15","openPrice":"7.80","prevClose":"8.35","expiryDate":"30MAY2019","lowPrice":"6.00","buyPrice4":"5.90","buyPrice3":"5.95","buyPrice5":"5.65","numberOfContractsTraded":"36","instrumentType":"OPTSTK","sellPrice1":"6.30","sellPrice2":"6.40","sellPrice3":"6.45","sellPrice4":"6.50","sellPrice5":"6.65","change":"-2.20","pchangeinOpenInterest":"66.67","ltp":"-3282.01","impliedVolatility":"56.77","underlyingValue":"130.80","buyQuantity4":"12,000","buyQuantity3":"4,000","buyQuantity2":"4,000","buyQuantity1":"8,000","buyQuantity5":"36,000","settlementPrice":"-","closePrice":"0.00","lastPrice":"6.15"}],"companyName":"Adani Enterprises Limited","lastUpdateTime":"26-APR-2019 14:38:58","isinCode":null,"ocLink":"\/marketinfo\/sym_map\/symbolMapping.jsp?symbol=ADANIENT&instrument=-&date=-&segmentLink=17&symbolCount=2"}';
-
-	if(JSON.parse(response).data[0].lowPrice >= JSON.parse(response).data[0].openPrice) {
-		value.push(JSON.parse(response).data[0].lastPrice,JSON.parse(response).data[0].openPrice,JSON.parse(response).data[0].lowPrice);
+	$.ajax({
+	  type: "GET",
+	  dataType: "json",
+	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+query,
+	  success: function(msg) {
+	     var open = JSON.parse(msg).data[0].openPrice;
+             var low = JSON.parse(msg).data[0].lowPrice;
+	     var current = JSON.parse(msg).data[0].lastPrice;
+             $("#btw").html(current);
+             if(low >= open) {
+		value.push(current,open,low);
 		out_stocks.push(value);
-	} else {
+	     } else {
 		$(this).remove();	
-	}
+	     }
+	  },
+	  error:function (xhr, ajaxOptions, thrownError){
+	     alert(xhr.status);
+	  }
+	});
 });
-alert(JSON.stringify(out_stocks));
+
 var ce_tbl_body = "";
 var pe_tbl_body = "";
 $.each(out_stocks, function(index,value) {
