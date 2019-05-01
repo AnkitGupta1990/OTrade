@@ -1,0 +1,4 @@
+[remote "origin"]
+	url = https://github.com/AnkitGupta1990/OTrade.git
+	url = https://github.com/AnkitGupta1990/OTrade
+	fetch = +refs/heads/*:refs/remotes/origin/*
