@@ -43,7 +43,9 @@ $.each(stocks, function(index,value) {
 })
 $("#ceList tbody").html(ce_tbl_body);
 $("#peList tbody").html(pe_tbl_body);
-
+if(localStorage.getItem('stocks') != null) {
+	stocks = localStorage.getItem('stocks');
+}
 function refresh() {
 $.each(stocks,function(index, value) {
 	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
@@ -61,7 +63,7 @@ $.each(stocks,function(index, value) {
                 $("#"+value[0]+"_open").html(open);
                 $("#"+value[0]+"_low").html(low);
 	     } else {
-                stocks.splice(index,1)
+                stocks.splice(index,1);
                 $("#"+value[0]).remove();
 	     }
 	  },
@@ -70,6 +72,7 @@ $.each(stocks,function(index, value) {
 	  }
 	});
 });
+localStorage.setItem('stocks',stocks);
 }
 refresh();
 </script> 
