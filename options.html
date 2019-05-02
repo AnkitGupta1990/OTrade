@@ -53,8 +53,6 @@ $("#peList tbody").html(pe_tbl_body);
 function refresh() {
 $.each(stocks,function(index, value) {
 	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
-        var sname = value[0];
-	sname = sname.replace("%26","_AND_");
 	$.ajax({
 	  type: "GET",
 	  dataType: "json",
@@ -63,16 +61,19 @@ $.each(stocks,function(index, value) {
 	     var open = msg.data[0].openPrice;
              var low = msg.data[0].lowPrice;
 	     var current = msg.data[0].lastPrice;
+	     var sname = msg.data[0].underlying;
+	     sname = sname.replace("&","_AND_");
+	     var optionType = msg.data[0].optionType;
              $("#btw").html('success : ' + current);
 	     if(open == '-') {
-		$("#"+value[1]+"_"+sname).remove();
+		$("#"+optionType+"_"+sname).remove();
 	     } else if(low >= open) {
-                $("#"+value[1]+"_"+sname+"_current").html(current);
-                $("#"+value[1]+"_"+sname+"_open").html(open);
-                $("#"+value[1]+"_"+sname+"_low").html(low);
+                $("#"+optionType+"_"+sname+"_current").html(current);
+                $("#"+optionType+"_"+sname+"_open").html(open);
+                $("#"+optionType+"_"+sname+"_low").html(low);
 	     } else {
                 stocks.splice(index,1);
-                $("#"+value[1]+"_"+sname).remove();
+                $("#"+optionType+"_"+sname).remove();
 	     }
 	  },
 	  error:function (xhr, ajaxOptions, thrownError){
