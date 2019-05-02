@@ -70,6 +70,7 @@ $.each(stocks,function(index, value) {
 	     var sname = msg.data[0].underlying;
 	     sname = sname.replace("&","_AND_");
 	     var optionType = msg.data[0].optionType;
+	     var strikePrice = msg.data[0].strikePrice;
              $("#btw").html('Success : ' + current);
 	     if(open == '-') {
 		$("#"+optionType+"_"+sname).remove();
@@ -78,7 +79,8 @@ $.each(stocks,function(index, value) {
                 $("#"+optionType+"_"+sname+"_open").html(open);
                 $("#"+optionType+"_"+sname+"_low").html(low);
 	     } else {
-                stocks.splice(index,1);
+                //stocks.splice(index,1);
+		stocks.splice($.inArray([sname.replace('_AND_','%26'),optionType,strikePrice], stocks),1);
                 $("#"+optionType+"_"+sname).remove();
 	     }
 	  },
