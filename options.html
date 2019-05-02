@@ -65,6 +65,7 @@ $.each(stocks,function(index, value) {
 	     var current = msg.data[0].lastPrice;
 	     var sname = msg.data[0].underlying;
 	     sname = sname.replace("&","_AND_");
+	     var optionType = msg.data[0].optionType;
              $("#btw").html('Success : ' + current);
 	     if(open == '-') {
 		$("#"+optionType+"_"+sname).remove();
