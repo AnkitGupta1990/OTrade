@@ -50,13 +50,15 @@ $.each(stocks,function(index, value) {
 	$.ajax({
 	  type: "GET",
 	  dataType: "json",
-	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+query,
+	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+encodeURIComponent(query),
 	  success: function(msg) {
 	     var open = msg.data[0].openPrice;
              var low = msg.data[0].lowPrice;
 	     var current = msg.data[0].lastPrice;
              $("#btw").html('success : ' + current);
-             if(low >= open) {
+	     if(open == '-') {
+		$("#"+value[1]+"_"+value[0]).remove();
+	     } else if(low >= open) {
                 $("#"+value[1]+"_"+value[0]+"_current").html(current);
                 $("#"+value[1]+"_"+value[0]+"_open").html(open);
                 $("#"+value[1]+"_"+value[0]+"_low").html(low);
