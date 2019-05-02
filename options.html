@@ -4,9 +4,11 @@ td,th {
 	font-size: 40px;
 }
 </style>
-<body style="font-size:40px;">
+<body style="font-size:60px;">
 <div id="btw"></div>
-<button onclick="refresh()" style="font-size:40px;">Refresh</button>
+<br>
+<button onclick="refresh()" style="font-size:60px;">Refresh</button>
+<br>
 CE
 <table border='1' style='border-collapse:collapse;' width="100%" cellpadding='2' id="ceList">
 <thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th></tr></thead>
@@ -69,7 +71,7 @@ $.each(stocks,function(index, value) {
 	     var sname = msg.data[0].underlying;
 	     sname = sname.replace("&","_AND_");
 	     var optionType = msg.data[0].optionType;
-             $("#btw").html('success : ' + current);
+             $("#btw").html('Success : ' + current);
 	     if(open == '-') {
 		$("#"+optionType+"_"+sname).remove();
 	     } else if(low >= open) {
@@ -82,7 +84,7 @@ $.each(stocks,function(index, value) {
 	     }
 	  },
 	  error:function (xhr, ajaxOptions, thrownError){
-	     $("#btw").html('error : ' + xhr.status);
+	     $("#btw").html('Error : ' + xhr.status);
 	  }
 	});
 });
