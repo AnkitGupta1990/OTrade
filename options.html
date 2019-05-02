@@ -6,7 +6,9 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div id="btw" style="float:left"></div>
-<div style="float:right"><button onclick="refresh()" style="font-size:60px;">Refresh</button></div>
+<div style="float:right">
+<button onclick="clearLocalStorage()" style="font-size:60px;">Clear</button></div>
+<button onclick="refresh()" style="font-size:60px;">Refresh</button></div>
 <br>
 CE
 <table border='1' style='border-collapse:collapse;' width="100%" cellpadding='2' id="ceList">
@@ -55,6 +57,11 @@ $.each(stocks, function(index,value) {
 })
 $("#ceList tbody").html(ce_tbl_body);
 $("#peList tbody").html(pe_tbl_body);
+
+function clearLocalStorage() {
+	localStorage.setItem("stocks_array",null);
+	localStorage.setItem("stocks_refresh_date",null);
+}
 
 function refresh() {
 $.each(stocks,function(index, value) {
