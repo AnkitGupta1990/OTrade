@@ -73,7 +73,7 @@ $.each(stocks,function(index, value) {
 	     try {
 		open = parseFloat(open);
 		low = parseFloat(low);
-		open = parseFloat(current);
+		current = parseFloat(current);
 		if(low >= open) {
 			$("#"+optionType+"_"+sname+"_current").html(current);
 			$("#"+optionType+"_"+sname+"_open").html(open);
