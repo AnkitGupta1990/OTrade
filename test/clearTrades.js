@@ -7,8 +7,14 @@ fs.writeFile("/tmp/test", "CLEAR", function(err) {
         return console.log(err);
     }
 });
+var contentsdata = '';
+fs.readFile('/tmp/test', 'utf8', function(err, contents) {
+console.log("data 0 " + contents); 
+contentsdata = contents;
+console.log("data " + contentsdata); 
+});
   callback(null, {
     statusCode: 200,
-    body: error
+    body: contentsdata
   });
 };
