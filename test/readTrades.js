@@ -1,13 +1,16 @@
 exports.handler = function(event, context, callback) {
-var contentsdata = '';
+const path = require('path');
 const fs = require('fs');
-fs.exists("../clearTrades/tmp/test", function(fileok){
-console.log("fileok " + fileok); 
-});
-fs.readFile('../clearTrades/tmp/test', 'utf8', function(err, contents) {
-console.log("data 0 " + contents); 
-contentsdata = contents;
-console.log("data " + contentsdata); 
+fs.readdir(__dirname, function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    //listing all files using forEach
+    files.forEach(function (file) {
+        // Do whatever you want to do with the file
+        console.log(file); 
+    });
 });
   callback(null, {
     statusCode: 200,
