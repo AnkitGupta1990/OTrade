@@ -14,6 +14,6 @@ fs.readdir(__dirname, function (err, files) {
 });
   callback(null, {
     statusCode: 200,
-    body: contentsdata
+    body: 'abc'
   });
 };
