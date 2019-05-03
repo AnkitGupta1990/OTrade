@@ -81,7 +81,7 @@ $.each(stocks,function(index, value) {
 		}else {
 			$("#"+optionType+"_"+sname).remove();
 		}
-	     } catch () {
+	     } catch (e) {
 		$("#"+optionType+"_"+sname).remove();
 	     }
 	  },
