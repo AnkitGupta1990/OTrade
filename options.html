@@ -55,6 +55,9 @@ $("#peList tbody").html(pe_tbl_body);
 function refresh() {
 $.each(stocks,function(index, value) {
 	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
+	if($("#"+value[1]+"_"+value[2].replace("%26","_AND_")).length <= 0) {
+		return true;	
+	}
 	$.ajax({
 	  type: "GET",
 	  dataType: "json",
@@ -67,14 +70,19 @@ $.each(stocks,function(index, value) {
 	     sname = sname.replace("&","_AND_");
 	     var optionType = msg.data[0].optionType;
              $("#btw").html('Success : ' + current);
-	     if(open == '-') {
+	     try {
+		open = parseFloat(open);
+		low = parseFloat(low);
+		open = parseFloat(current);
+		if(low >= open) {
+			$("#"+optionType+"_"+sname+"_current").html(current);
+			$("#"+optionType+"_"+sname+"_open").html(open);
+			$("#"+optionType+"_"+sname+"_low").html(low);
+		}else {
+			$("#"+optionType+"_"+sname).remove();
+		}
+	     } catch () {
 		$("#"+optionType+"_"+sname).remove();
-	     } else if(low >= open) {
-                $("#"+optionType+"_"+sname+"_current").html(current);
-                $("#"+optionType+"_"+sname+"_open").html(open);
-                $("#"+optionType+"_"+sname+"_low").html(low);
-	     } else {
-                $("#"+optionType+"_"+sname).remove();
 	     }
 	  },
 	  error:function (xhr, ajaxOptions, thrownError){
