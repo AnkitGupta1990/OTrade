@@ -13,13 +13,13 @@ td,th {
 <div style="clear:both"></div>
 CE
 <table border='1' style='border-collapse:collapse;' width="100%" cellpadding='2' id="ceList">
-<thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th></tr></thead>
+<thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th><th style="display:none">Pur</th></tr></thead>
 <tbody>
 </tbody>
 </table>
 PE
 <table border='1' style='border-collapse:collapse;' width="100%" cellpadding='2' id="peList">
-<thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th></tr></thead>
+<thead><tr><th>SYMBOL</th><th>STRIKE</th><th>PRICE</th><th>OPEN</th><th>LOW</th><th style="display:none">Pur</th></tr></thead>
 <tbody>
 </tbody>
 </table>
@@ -53,6 +53,7 @@ $.each(stocks, function(index,value) {
 	tbl_row += "<td id='"+value[1]+"_"+sname+"_current'>"+''+"</td>";
 	tbl_row += "<td id='"+value[1]+"_"+sname+"_open'>"+''+"</td>";
 	tbl_row += "<td id='"+value[1]+"_"+sname+"_low'>"+''+"</td>";
+	tbl_row += "<td style='display:none' id='"+value[1]+"_"+sname+"_purchase_price'>"+''+"</td>";
 	if(value[1] == 'CE') {
 		ce_tbl_body += "<tr id='"+value[1]+"_"+sname+"'>"+tbl_row+"</tr>";
  	} else {
@@ -92,6 +93,7 @@ $.each(stocks,function(index, value) {
 	     var sname = msg.data[0].underlying;
 	     sname = sname.replace("&","_AND_");
 	     var optionType = msg.data[0].optionType;
+	     var purchase_price = msg.data[0].sellPrice1;
              $("#btw").html('Success : ' + current);
 	     try {
 		open = parseFloat(open);
@@ -101,6 +103,7 @@ $.each(stocks,function(index, value) {
 			$("#"+optionType+"_"+sname+"_current").html(current);
 			$("#"+optionType+"_"+sname+"_open").html(open);
 			$("#"+optionType+"_"+sname+"_low").html(low);
+			$("#"+optionType+"_"+sname+"_purchase_price").html(purchase_price);
 		}else {
 			$("#"+optionType+"_"+sname).remove();
 		}
