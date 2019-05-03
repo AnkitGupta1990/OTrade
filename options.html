@@ -66,7 +66,7 @@ $("#peList tbody").html(pe_tbl_body);
 $('#buystocks').html(localStorage.getItem('buy_stocks'));
 
 function buy() {
-var str = 'buy ' + $(event.target).parent().attr('id') + ' at ' + $(event.target).next().next().html();
+var str = 'buy ' + $(event.target).parent().attr('id') + ' at ' + $(event.target).next().next().next().next().next().html();
 localStorage.setItem('buy_stocks',localStorage.getItem('buy_stocks') == null ? '' : localStorage.getItem('buy_stocks') +' <br> ' + str);
 $('#buystocks').html(localStorage.getItem('buy_stocks'));
 }
