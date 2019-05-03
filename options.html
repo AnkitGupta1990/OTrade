@@ -65,12 +65,12 @@ $("#peList tbody").html(pe_tbl_body);
 $('#buystocks').html(localStorage.getItem('buy_stocks'));
 
 function buy() {
-	localStorage.setItem('buy_stocks',localStorage.getItem('buy_stocks')+' <br> buy ACC at 6');
+	localStorage.setItem('buy_stocks',localStorage.getItem('buy_stocks') == null ? '' : localStorage.getItem('buy_stocks') +' <br> buy ACC at 6');
 	$('#buystocks').html(localStorage.getItem('buy_stocks'));
 }
 
-function clear() {
-	localStorage.setItem('buy_stocks',null);
+function clearStocks() {
+	localStorage.setItem('buy_stocks','');
 	$('#buystocks').html(localStorage.getItem('buy_stocks'));
 }
 
