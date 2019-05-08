@@ -75,7 +75,7 @@ $.each(today_stocks, function(index,value) {
 	value = value.split('###');
 	var tbl_row = "";
 	var clorstyle = '';
-        tbl_row += "<td onclick='buy1()' "+clorstyle+">"+value[0].replace("%26","&")+''+value[1]+"</td>";
+        tbl_row += "<td onclick='buy1()' "+clorstyle+">"+value[0].replace("%26","&")+' '+value[1]+"</td>";
 	tbl_row += "<td>"+value[2]+"</td>";
         var sname = value[0];
         sname = sname.replace("%26","_AND_");
@@ -99,7 +99,49 @@ function clearStocks() {
 	$('#buystocks').html(localStorage.getItem('buy_stocks'));
 }
 
+function refresh1() {
+$.each(today_stocks,function(index, value) {
+	value = value.split('###');
+	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
+	if($("#"+value[1]+"_"+value[0].replace("%26","_AND_")).length <= 0) {
+		return true;	
+	}
+	$.ajax({
+	  type: "GET",
+	  dataType: "json",
+	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+query,
+	  success: function(msg) {
+	     var open = msg.data[0].openPrice;
+             var low = msg.data[0].lowPrice;
+	     var current = msg.data[0].lastPrice;
+	     var sname = msg.data[0].underlying;
+	     sname = sname.replace("&","_AND_");
+	     var optionType = msg.data[0].optionType;
+             $("#btw").html('Success : ' + current);
+	     try {
+		open = parseFloat(open);
+		low = parseFloat(low);
+		current = parseFloat(current);
+		if(low >= open) {
+			$("#T_"+optionType+"_"+sname+"_current").html(current);
+			$("#T_"+optionType+"_"+sname+"_open").html(open);
+			$("#T_"+optionType+"_"+sname+"_low").html(pcl);
+		}else {
+			$("#T_"+optionType+"_"+sname).remove();
+		}
+	     } catch (e) {
+		$("#T_"+optionType+"_"+sname).remove();
+	     }
+	  },
+	  error:function (xhr, ajaxOptions, thrownError){
+	     $("#btw").html('Error : ' + xhr.status);
+	  }
+	});
+});
+}
+
 function refresh() {
+refresh1();
 $.each(stocks,function(index, value) {
 	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
 	if($("#"+value[1]+"_"+value[0].replace("%26","_AND_")).length <= 0) {
@@ -143,45 +185,4 @@ $.each(stocks,function(index, value) {
 });
 }
 refresh();
-function refresh1() {
-$.each(today_stocks,function(index, value) {
-	value = value.split('###');
-	var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=30MAY2019&type="+value[1]+"&strike="+value[2];
-	if($("#"+value[1]+"_"+value[0].replace("%26","_AND_")).length <= 0) {
-		return true;	
-	}
-	$.ajax({
-	  type: "GET",
-	  dataType: "json",
-	  url: "https://www.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?"+query,
-	  success: function(msg) {
-	     var open = msg.data[0].openPrice;
-             var low = msg.data[0].lowPrice;
-	     var current = msg.data[0].lastPrice;
-	     var sname = msg.data[0].underlying;
-	     sname = sname.replace("&","_AND_");
-	     var optionType = msg.data[0].optionType;
-             $("#btw").html('Success : ' + current);
-	     try {
-		open = parseFloat(open);
-		low = parseFloat(low);
-		current = parseFloat(current);
-		if(low >= open) {
-			$("#T_"+optionType+"_"+sname+"_current").html(current);
-			$("#T_"+optionType+"_"+sname+"_open").html(open);
-			$("#T_"+optionType+"_"+sname+"_low").html(pcl);
-		}else {
-			$("#T_"+optionType+"_"+sname).remove();
-		}
-	     } catch (e) {
-		$("#T_"+optionType+"_"+sname).remove();
-	     }
-	  },
-	  error:function (xhr, ajaxOptions, thrownError){
-	     $("#btw").html('Error : ' + xhr.status);
-	  }
-	});
-});
-}
-refresh1();
 </script> 
