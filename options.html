@@ -118,6 +118,18 @@ $.each(today_stocks,function(index, value) {
 	     $("#T_"+optionType+"_"+sname+"_current").html(current);
 	     $("#T_"+optionType+"_"+sname+"_open").html(open);
 	     $("#T_"+optionType+"_"+sname+"_low").html(low);
+	     
+	     try {
+		open = parseFloat(open);
+		low = parseFloat(low);
+		if(low >= open) {
+			$("#T_"+optionType+"_"+sname+" :first-child").css('color','green');
+		}else {
+			$("#T_"+optionType+"_"+sname+" :first-child").css('color','red');
+		}
+	     } catch (e) {
+		
+	     }
 	  },
 	  error:function (xhr, ajaxOptions, thrownError){
 	     $("#btw").html('Error : ' + xhr.status);
