@@ -12,7 +12,10 @@
 		<div style="float:right"><button onclick="clearStocks()" style="font-size:60px;">Clear</button></div>
 		<div style="clear:both"></div>
 		<div id="autoTradeStocks" style="float:left"></div>
-		<div style="float:right"><button onclick="trade()" style="font-size:60px;">Auto Trade</button></div>
+		<div style="float:right">
+			<button onclick="startRefresh()" style="font-size:60px;">Auto Refresh ON</button>
+			<button onclick="stopRefresh()" style="font-size:60px;">Auto Refresh OFF</button>
+		</div>
 		<div style="clear:both"></div>
 		Today
 		<table border='1' style='border-collapse:collapse;' width="100%" cellpadding='2' id="todayList">
@@ -144,9 +147,15 @@
 		});
 	}
 	
-	window.setInterval(function(){
-	 trade();
-	}, 1000);
+	var tradeInterval = '';
+	
+	function startRefresh() {
+		tradeInterval = window.setInterval(function(){ trade(); }, 1000);
+	}
+	
+	function stopRefresh() {
+		clearInterval(tradeInterval);
+	}
 	
 	function refreshTodayStocks() {
 		$.each(today_stocks,function(index, value) {
