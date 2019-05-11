@@ -124,14 +124,14 @@
 				 	open = parseFloat(open);
 					var optionType = msg.data[0].optionType;
 					var str = 'buy ' + sname + ' ' + optionType + ' at ' + purchase_price;
-					if(localStorage.getItem('auto_trade_stocks').indexOf('buy ' + sname + ' ' + optionType) < 0) {
+					if(localStorage.getItem('auto_trade_stocks') == null || localStorage.getItem('auto_trade_stocks').indexOf('buy ' + sname + ' ' + optionType) < 0) {
 						localStorage.setItem('auto_trade_stocks',localStorage.getItem('auto_trade_stocks') == null ? '' : localStorage.getItem		('auto_trade_stocks') +' <br> ' + str);
 						$('#autoTradeStocks').html(localStorage.getItem('auto_trade_stocks'));			
 					}
 					str = 'sell ' + sname + ' ' + optionType + ' at ' + sell_price;
 		            low = parseFloat(low);
 					if(low < open) {
-						if(localStorage.getItem('auto_trade_stocks').indexOf('sell ' + sname + ' ' + optionType) < 0) {
+						if(localStorage.getItem('auto_trade_stocks') == null || localStorage.getItem('auto_trade_stocks').indexOf('sell ' + sname + ' ' + optionType) < 0) {
 							localStorage.setItem('auto_trade_stocks',localStorage.getItem('auto_trade_stocks') == null ? '' : localStorage.getItem		('auto_trade_stocks') +' <br> ' + str);
 							$('#autoTradeStocks').html(localStorage.getItem('auto_trade_stocks'));			
 						}
