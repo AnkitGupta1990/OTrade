@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Sat May 11 14:01:02 IST 2019
+Last Stocks Refresh : Sat May 11 17:55:41 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['POWERGRID###PE###185.00','IFCI###PE###9.00','DCBBANK###PE###215.00','KOTAKBANK###PE###1380.00','RBLBANK###PE###670.00','APOLLOTYRE###CE###195.00','JSWSTEEL###CE###290.00','SAIL###CE###53.00','PVR###CE###1720.00','KSCL###CE###450.00'];
+var list = ['POWERGRID###PE###185.00','IFCI###PE###9.00','DCBBANK###PE###215.00','KOTAKBANK###PE###1380.00','RBLBANK###PE###670.00','SYNDIBANK###PE###37.00','INDIANB###PE###240.00','GMRINFRA###PE###16.00','MCDOWELL-N###PE###530.00','SUNPHARMA###PE###430.00','APOLLOTYRE###CE###195.00','JSWSTEEL###CE###290.00','SAIL###CE###53.00','PVR###CE###1720.00','KSCL###CE###450.00','ZEEL###CE###380.00','CHOLAFIN###CE###1300.00','NCC###CE###97.50','SRF###CE###2450.00','AMBUJACEM###CE###215.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
