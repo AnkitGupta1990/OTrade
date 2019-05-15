@@ -122,6 +122,9 @@
 			     var optionType = msg.data[0].optionType;
 		         try {
 				 	open = parseFloat(open);
+				 	if(!isFinite(open)) {
+				 		return;
+				 	}
 					var optionType = msg.data[0].optionType;
 					var str = 'buy ' + sname + ' ' + optionType + ' at ' + purchase_price;
 					if(localStorage.getItem('auto_trade_stocks') == null || localStorage.getItem('auto_trade_stocks').indexOf('buy ' + sname + ' ' + optionType) < 0) {
