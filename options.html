@@ -107,6 +107,7 @@
 	}
 	
 	function trade() {
+		$("#btw").html($("#btw").html() + ' ' + new Date());
 		$.each(today_stocks,function(index, value) {
 			value = value.split('###');
 			if(localStorage.getItem('auto_trade_stocks') != null && 
