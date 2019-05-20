@@ -91,6 +91,7 @@
 	$("#todayList tbody").html(today_tbl_body);
 	
 	$('#buystocks').html(localStorage.getItem('buy_stocks'));
+	$('#autoTradeStocks').html(localStorage.getItem('auto_trade_stocks'));
 	
 	function buy() {
 		var str = 'buy ' + $(event.target).parent().attr('id') + ' at ' + $(event.target).next().next().next().next().next().html();
