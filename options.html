@@ -6,6 +6,7 @@
 	</style>
 	<body style="font-size:60px;">
 		<div id="btw" style="float:left"></div>
+		<div id="btw1" style="float:left"></div>
 		<div style="float:right"><button onclick="refresh()" style="font-size:60px;">Refresh</button></div>
 		<div style="clear:both"></div>
 		<div id="buystocks" style="float:left"></div>
@@ -107,7 +108,7 @@
 	}
 	
 	function trade() {
-		$("#btw").html($("#btw").html() + ' ' + new Date());
+		$("#btw1").html(new Date());
 		$.each(today_stocks,function(index, value) {
 			value = value.split('###');
 			if(localStorage.getItem('auto_trade_stocks') != null && 
