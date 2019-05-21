@@ -141,7 +141,7 @@
 					}
 					str = 'sell ' + sname + ' ' + optionType + ' at ' + sell_price;
 		            low = parseFloat(low);
-					if(low < open || (new Date().getHours() == 15 && new Date().getMinutes() == 15)) {
+					if(low < open || (new Date().getHours() >= 15 && new Date().getMinutes() >= 20)) {
 						if(localStorage.getItem('auto_trade_stocks') == null || localStorage.getItem('auto_trade_stocks').indexOf('sell ' + sname + ' ' + optionType) < 0) {
 							localStorage.setItem('auto_trade_stocks',localStorage.getItem('auto_trade_stocks') == null ? '' : localStorage.getItem('auto_trade_stocks') +' <br> ' + str);
 							$('#autoTradeStocks').html(localStorage.getItem('auto_trade_stocks'));			
