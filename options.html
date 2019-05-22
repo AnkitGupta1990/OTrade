@@ -108,6 +108,9 @@
 	}
 	
 	function trade() {
+		if(new Date().getHours() >= 15 && new Date().getMinutes() >= 30) {
+				stopRefresh();	
+		}
 		$("#btw1").html(new Date());
 		$.each(today_stocks,function(index, value) {
 			value = value.split('###');
