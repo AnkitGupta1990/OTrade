@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Wed May 22 17:57:33 IST 2019
+Last Stocks Refresh : Thu May 23 17:58:10 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['BOSCHLTD###PE###16750.00','JUSTDIAL###PE###740.00','PVR###PE###1750.00','PNB###PE###82.50','MARUTI###PE###6800.00','SRTRANSFIN###PE###1060.00','TORNTPHARM###PE###1550.00','SOUTHBANK###PE###13.00','PEL###PE###2150.00','SUNTV###PE###540.00','CENTURYTEX###CE###980.00','EICHERMOT###CE###21500.00','BSOFT###CE###90.00','INDIGO###CE###1520.00','TATACHEM###CE###630.00','ALBK###CE###48.00','DIVISLAB###CE###1700.00','SUNPHARMA###CE###430.00','RAYMOND###CE###820.00','ONGC###CE###177.50'];
+var list = ['PCJEWELLER###PE###102.50','HDFCBANK###PE###2320.00','ITC###PE###287.50','CANBK###PE###255.00','RELIANCE###PE###1320.00','EICHERMOT###PE###20000.00','HINDPETRO###PE###285.00','HINDALCO###PE###190.00','DHFL###PE###110.00','ESCORTS###PE###600.00','BHARATFIN###CE###1020.00','RAMCOCEM###CE###800.00','COLPAL###CE###1160.00','ORIENTBANK###CE###97.50','SIEMENS###CE###1200.00','CESC###CE###730.00','DISHTV###CE###31.00','BHEL###CE###67.00','DCBBANK###CE###230.00','PVR###CE###1780.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
