@@ -109,12 +109,9 @@
 	
 	function trade() {
 		if(new Date().getHours() >= 15 && new Date().getMinutes() >= 30) {
-				//stopRefresh();	
+				stopRefresh();	
 		}
-		$("#btw1").html($("#btw1").html()+ ' ' +new Date().getMinutes());
-		if(new Date().getHours() >= 15 && new Date().getMinutes() >= 30) {
-			return;		
-		}		
+		$("#btw1").html(new Date());
 		$.each(today_stocks,function(index, value) {
 			value = value.split('###');
 			if(localStorage.getItem('auto_trade_stocks') != null && 
