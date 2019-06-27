@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Wed Jun 26 18:07:57 IST 2019
+Last Stocks Refresh : Thu Jun 27 17:57:23 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['INDIGO###PE###1560.00','BHARTIARTL###PE###340.00','GRASIM###PE###910.00','ULTRACEMCO###PE###4550.00','PCJEWELLER###PE###47.50','SOUTHBANK###PE###13.00','INFY###PE###730.00','VEDL###CE###180.00','JSWSTEEL###CE###280.00','HDFCBANK###CE###2480.00','ALBK###CE###50.00','SYNDIBANK###CE###42.00','UPL###CE###960.00','NIITTECH###CE###1340.00','AUROPHARMA###CE###630.00','DLF###CE###185.00','RECLTD###CE###165.00'];
+var list = ['BSOFT###PE###90.00','ADANIPORTS###PE###400.00','TV18BRDCST###PE###24.00','GSFC###PE###87.50','SOUTHBANK###PE###12.00','TATACOMM###PE###480.00','TECHM###PE###700.00','HINDALCO###PE###205.00','KSCL###PE###460.00','GRASIM###CE###930.00','HINDZINC###CE###245.00','SBIN###CE###365.00','FEDERALBNK###CE###109.00','BEML###CE###920.00','NTPC###CE###142.50','PFC###CE###137.50','NHPC###CE###25.00','ONGC###CE###172.50','MGL###CE###870.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
