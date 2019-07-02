@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Mon Jul 01 18:13:02 IST 2019
+Last Stocks Refresh : Tue Jul 02 17:57:57 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['DLF###PE###190.00','CHOLAFIN###PE###280.00','HAVELLS###PE###780.00','PETRONET###PE###245.00','CANBK###PE###285.00','BRITANNIA###PE###2700.00','MINDTREE###PE###900.00','MUTHOOTFIN###PE###630.00','TATAELXSI###CE###900.00'];
+var list = ['IDBI###PE###36.00','RELCAPITAL###PE###60.00','BAJAJ-AUTO###PE###2850.00','DRREDDY###PE###2600.00','BPCL###PE###370.00','CIPLA###PE###555.00','LT###PE###1560.00','PVR###PE###1680.00','NESTLEIND###PE###11900.00','BRITANNIA###PE###2750.00','MINDTREE###CE###920.00','ONGC###CE###167.50','MARUTI###CE###6600.00','SRTRANSFIN###CE###1080.00','CONCOR###CE###580.00','NATIONALUM###CE###51.00','BAJAJFINSV###CE###8500.00','NTPC###CE###145.00','IDFCFIRSTB###CE###45.00','HINDUNILVR###CE###1800.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
