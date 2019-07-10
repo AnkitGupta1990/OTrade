@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Tue Jul 09 17:57:56 IST 2019
+Last Stocks Refresh : Wed Jul 10 17:57:39 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['MRF###PE###54500.00','NIITTECH###PE###1310.00','PAGEIND###PE###19500.00','HCLTECH###PE###1020.00','EQUITAS###PE###115.00','BPCL###PE###360.00','HDFC###PE###2220.00','DISHTV###PE###27.50','JUBLFOOD###PE###1220.00','IBULHSGFIN###PE###680.00','CONCOR###CE###550.00','NESTLEIND###CE###11700.00','HINDUNILVR###CE###1760.00','MARICO###CE###375.00','IOC###CE###152.50','INDIGO###CE###1580.00','MUTHOOTFIN###CE###620.00','NBCC###CE###57.00','ULTRACEMCO###CE###4500.00','SRTRANSFIN###CE###1060.00'];
+var list = ['PEL###PE###1900.00','HDFCBANK###PE###2380.00','TCS###PE###2100.00','DISHTV###PE###26.00','BAJFINANCE###PE###3400.00','AXISBANK###PE###760.00','PNB###PE###72.50','ADANIPOWER###PE###62.50','MARUTI###PE###5900.00','SBIN###PE###350.00','NESTLEIND###CE###11600.00','JUBLFOOD###CE###1240.00','DRREDDY###CE###2600.00','MINDTREE###CE###760.00','RECLTD###CE###145.00','RAMCOCEM###CE###790.00','ADANIPORTS###CE###410.00','AMARAJABAT###CE###650.00','KAJARIACER###CE###560.00','PETRONET###CE###245.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
