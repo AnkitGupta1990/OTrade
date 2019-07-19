@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Thu Jul 18 17:57:39 IST 2019
+Last Stocks Refresh : Fri Jul 19 14:48:06 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['SBIN###PE###360.00','DLF###PE###180.00','ASHOKLEY###PE###80.00','BAJAJ-AUTO###PE###2600.00','CIPLA###PE###545.00','YESBANK###PE###85.00','FEDERALBNK###PE###99.00','CASTROLIND###PE###130.00','PFC###PE###120.00','BHARATFORG###PE###440.00','MFSL###CE###430.00','EQUITAS###CE###125.00','CONCOR###CE###540.00','BATAINDIA###CE###1360.00','M&MFIN###CE###380.00','DISHTV###CE###35.00','IOC###CE###150.00','GLENMARK###CE###450.00','AMARAJABAT###CE###650.00','HCLTECH###CE###1020.00'];
+var list = ['SBIN###PE###360.00###365.00','DLF###PE###180.00###185.00','ASHOKLEY###PE###80.00###82.50','BAJAJ-AUTO###PE###2600.00###2650.00','CIPLA###PE###545.00###550.00','MFSL###CE###430.00###420.00','EQUITAS###CE###125.00###122.50','CONCOR###CE###540.00###530.00','BATAINDIA###CE###1360.00###1340.00','M&MFIN###CE###380.00###370.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
