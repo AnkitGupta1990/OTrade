@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Mon Jul 22 17:58:21 IST 2019
+Last Stocks Refresh : Tue Jul 23 17:57:52 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['HDFC###PE###2180.00###2200.00','HINDUNILVR###PE###1680.00###1700.00','CUMMINSIND###PE###720.00###740.00','BAJFINANCE###PE###3200.00###3250.00','MANAPPURAM###PE###120.00###122.50','VEDL###CE###167.50###165.00','DLF###CE###180.00###175.00','MARUTI###CE###6000.00###5900.00','HINDALCO###CE###202.50###200.00','DISHTV###CE###34.00###33.00'];
+var list = ['SBIN###PE###340.00###345.00','HDFC###PE###2120.00###2140.00','CHOLAFIN###PE###248.00###250.00','INFY###PE###790.00###800.00','IDEA###PE###10.00###11.00','IOC###PE###145.00###147.50','HCLTECH###PE###1000.00###1020.00','SUNPHARMA###PE###430.00###440.00','GMRINFRA###PE###14.00###15.00','POWERGRID###CE###212.50###210.00','KOTAKBANK###CE###1500.00###1480.00','HEROMOTOCO###CE###2500.00###2450.00','MANAPPURAM###CE###122.50###120.00','CESC###CE###750.00###740.00','NTPC###CE###135.00###132.50','PVR###CE###1800.00###1780.00','BAJAJFINSV###CE###7200.00###7100.00','TORNTPHARM###CE###1480.00###1460.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
