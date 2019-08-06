@@ -1,5 +1,6 @@
+const https = require('https');
+
 exports.handler = function(event, context, callback) {
-	const https = require('https');
 	getLiveDataPromise();
   	callback(null, {
     	statusCode: 200,
