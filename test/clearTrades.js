@@ -16,10 +16,10 @@ async function getLiveDataPromise() {
         path: "live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp",
         method: "GET",
         data : {
-        	underlying : "YESBANK"
-        	instrument : "OPTSTK"
-        	expiry : "29AUG2019"
-        	type : "CE"
+        	underlying : "YESBANK",
+        	instrument : "OPTSTK",
+        	expiry : "29AUG2019",
+        	type : "CE",
         	strike : "86.00"
         },
         headers: {
