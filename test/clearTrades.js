@@ -13,15 +13,8 @@ async function getLiveDataPromise() {
     var options = {
         host: "www.nseindia.com",
         port: 443,
-        path: "/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp",
+        path: "/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?underlying=YESBANK&instrument=OPTSTK&expiry=29AUG2019&type=CE&strike=86.00",
         method: "GET",
-        data : {
-        	underlying : "YESBANK",
-        	instrument : "OPTSTK",
-        	expiry : "29AUG2019",
-        	type : "CE",
-        	strike : "86.00"
-        },
         headers: {
             "Referer": "https://www.nseindia.com/",
             "User-Agent" : "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)"
