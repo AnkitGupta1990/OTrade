@@ -1,10 +1,10 @@
 const https = require('https');
 
 exports.handler = async ( event , context ) => { 
-	getLiveDataPromise();
+	var result = await getLiveDataPromise();
  	return { 
  		statusCode : 200 , 
- 		body : "SUCCESS"
+ 		body : result
  	};
 }
 
