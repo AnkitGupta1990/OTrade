@@ -13,7 +13,7 @@ async function getLiveDataPromise() {
     var options = {
         host: "www.nseindia.com",
         port: 443,
-        path: "live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp",
+        path: "/live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp",
         method: "GET",
         data : {
         	underlying : "YESBANK",
