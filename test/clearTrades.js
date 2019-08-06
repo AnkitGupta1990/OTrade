@@ -11,7 +11,7 @@ exports.handler = function(event, context, callback) {
 async function getLiveDataPromise() {
   return new Promise((resolve, reject) => {
     var options = {
-        host: "https://www.nseindia.com",
+        host: "www.nseindia.com",
         port: 443,
         path: "live_market/dynaContent/live_watch/get_quote/ajaxFOGetQuoteJSON.jsp?underlying=YESBANK&instrument=OPTSTK&expiry=29AUG2019&type=CE&strike=86.00",
         method: "GET",
