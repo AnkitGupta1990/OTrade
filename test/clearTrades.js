@@ -4,9 +4,9 @@ exports.handler = async ( event , context ) => {
 	getLiveDataPromise();
  	return { 
  		statusCode : 200 , 
- 		body : “SUCCESS” 
- 	}; 
-} 
+ 		body : "SUCCESS"
+ 	};
+}
 
 async function getLiveDataPromise() {
   return new Promise((resolve, reject) => {
