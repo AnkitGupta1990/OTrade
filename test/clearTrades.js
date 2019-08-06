@@ -45,7 +45,7 @@ async function getLiveData() {
   try {
     let http_promise = getLiveDataPromise();
     let response_body = await http_promise;
-    console.log(response_body);
+    console.error(response_body);
     return response_body;
   }
   catch(error) {
