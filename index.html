@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Fri Aug 16 17:58:02 IST 2019
+Last Stocks Refresh : Mon Aug 19 17:58:11 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['TCS###PE###2160.00###2180.00','ENGINERSIN###PE###102.50###105.00','MFSL###PE###410.00###420.00','HDFC###PE###2080.00###2120.00','JUBLFOOD###PE###1100.00###1120.00','RELINFRA###PE###45.00###47.50','AUROPHARMA###PE###600.00###610.00','DRREDDY###PE###2450.00###2500.00','BHARATFORG###PE###390.00###400.00','MOTHERSUMI###PE###97.50###100.00','POWERGRID###CE###212.50###210.00','UPL###CE###550.00###546.65','MARUTI###CE###6000.00###5900.00','HEXAWARE###CE###390.00###385.00','SUNTV###CE###450.00###440.00','GAIL###CE###130.00###127.50','IDEA###CE###7.00###6.00','CANBK###CE###240.00###235.00','PNB###CE###70.00###67.50','PFC###CE###110.00###107.50'];
+var list = ['RAMCOCEM###PE###730.00###740.00','ACC###PE###1580.00###1600.00','RAYMOND###PE###600.00###620.00','HDFCBANK###PE###2200.00###2220.00','GMRINFRA###PE###15.00###16.00','ESCORTS###PE###460.00###470.00','CANBK###PE###230.00###235.00','POWERGRID###PE###205.00###207.50','GAIL###PE###125.00###127.50','HINDPETRO###PE###240.00###245.00','UBL###CE###1340.00###1320.00','NIITTECH###CE###1330.00###1320.00','GLENMARK###CE###370.00###360.00','PVR###CE###1460.00###1440.00','TECHM###CE###680.00###670.00','NESTLEIND###CE###12100.00###12000.00','DIVISLAB###CE###1520.00###1500.00','NBCC###CE###34.00###33.00','HAVELLS###CE###670.00###660.00','MCX###CE###870.00###860.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
