@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Wed Aug 21 17:58:50 IST 2019
+Last Stocks Refresh : Tue Aug 27 12:45:17 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['CESC###PE###770.00###780.00','ACC###PE###1540.00###1560.00','UBL###PE###1300.00###1320.00','INDUSINDBK###PE###1400.00###1420.00','BAJAJFINSV###PE###7200.00###7300.00','STAR###PE###390.00###400.00','EICHERMOT###PE###15750.00###16000.00','L&TFH###PE###97.50###100.00','PFC###PE###105.00###107.50','CANBK###PE###225.00###230.00','TCS###CE###2200.00###2180.00','ENGINERSIN###CE###105.00###102.50','CHOLAFIN###CE###260.00###256.00','INFRATEL###CE###260.00###255.00','DRREDDY###CE###2600.00###2550.00','KOTAKBANK###CE###1520.00###1500.00','TITAN###CE###1100.00###1080.00','RELINFRA###CE###45.00###42.50','DIVISLAB###CE###1540.00###1520.00','TATAMOTORS###CE###125.00###120.00'];
+var list = ['RAMCOCEM###PE###730.00###740.00','HEROMOTOCO###PE###2550.00###2600.00','EICHERMOT###PE###15500.00###15750.00','SUNPHARMA###PE###410.00###420.00','MARUTI###PE###6200.00###6300.00','MOTHERSUMI###PE###97.50###100.00','BAJAJ-AUTO###PE###2700.00###2750.00','MCX###CE###900.00###890.00','HDFCBANK###CE###2260.00###2240.00','ADANIPORTS###CE###370.00###360.00','HDFC###CE###2160.00###2140.00','KOTAKBANK###CE###1520.00###1500.00','LT###CE###1340.00###1320.00','ICICIBANK###CE###415.00###410.00','TATAELXSI###CE###650.00###640.00','BAJFINANCE###CE###3350.00###3300.00','DISHTV###CE###27.00###26.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
