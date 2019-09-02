@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Fri Aug 30 12:27:39 IST 2019
+Last Stocks Refresh : Mon Sep 02 11:54:38 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['BANKBARODA###PE###90.00###92.50','FEDERALBNK###PE###80.00###82.50','PNB###PE###65.00###67.50','ITC###PE###240.00###242.50','ICICIBANK###PE###400.00###405.00','YESBANK###PE###55.00###60.00','TATAMTRDVR###PE###52.50###55.00','SBIN###PE###270.00###275.00','DISHTV###PE###22.00###22.50','COALINDIA###PE###185.00###190.00','SUNPHARMA###CE###440.00###430.00','EICHERMOT###CE###16750.00###16500.00','JSWSTEEL###CE###215.00###210.00','CONCOR###CE###500.00###490.00','NIITTECH###CE###1520.00###1510.00','RAMCOCEM###CE###750.00###740.00','CHOLAFIN###CE###268.00###265.00','NESTLEIND###CE###12800.00###12700.00','ONGC###CE###125.00###122.50'];
+var list = ['CONCOR###PE###500.00###510.00','CASTROLIND###PE###122.50###125.00','CIPLA###CE###480.00###470.00','HDFC###CE###2180.00###2160.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
