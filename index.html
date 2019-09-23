@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Thu Sep 19 15:11:24 IST 2019
+Last Stocks Refresh : Mon Sep 23 11:49:24 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['BHARTIARTL###PE###330.00###340.00','EICHERMOT###PE###16000.00###16250.00','COALINDIA###PE###190.00###195.00','HAVELLS###PE###640.00###660.00','ICICIBANK###PE###395.00###400.00','NIITTECH###PE###1360.00###1370.00','OIL###PE###150.00###152.50','ONGC###PE###125.00###127.50','ARVIND###PE###55.00###57.50','MCX###PE###920.00###930.00','TATASTEEL###CE###360.00###350.00','BHARATFORG###CE###410.00###400.00','NMDC###CE###87.50###85.00','HINDZINC###CE###215.00###212.50','PFC###CE###102.50###100.00','CASTROLIND###CE###127.50###125.00','CADILAHC###CE###245.00###240.00','PETRONET###CE###265.00###260.00','BPCL###CE###390.00###380.00','SUNTV###CE###440.00###430.00'];
+var list = ['JUSTDIAL###PE###660.00###680.00','ULTRACEMCO###CE###4300.00###4200.00','INDUSINDBK###CE###1450.00###1400.00','HEROMOTOCO###CE###2900.00###2850.00','SUNTV###CE###460.00###450.00','AMBUJACEM###CE###220.00###215.00','GRASIM###CE###760.00###740.00','AXISBANK###CE###690.00###680.00','HINDPETRO###CE###280.00###270.00','SIEMENS###CE###1340.00###1320.00','TVSMOTOR###CE###430.00###420.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
