@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Mon Sep 23 11:49:24 IST 2019
+Last Stocks Refresh : Fri Sep 27 17:13:43 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['JUSTDIAL###PE###660.00###680.00','ULTRACEMCO###CE###4300.00###4200.00','INDUSINDBK###CE###1450.00###1400.00','HEROMOTOCO###CE###2900.00###2850.00','SUNTV###CE###460.00###450.00','AMBUJACEM###CE###220.00###215.00','GRASIM###CE###760.00###740.00','AXISBANK###CE###690.00###680.00','HINDPETRO###CE###280.00###270.00','SIEMENS###CE###1340.00###1320.00','TVSMOTOR###CE###430.00###420.00'];
+var list = ['BSOFT###PE###70.00###72.50','TATAMTRDVR###PE###55.00###57.50','SBIN###PE###280.00###285.00','TVSMOTOR###CE###420.00###410.00','SHREECEM###CE###19500.00###19250.00','M&M###CE###570.00###560.00','TITAN###CE###1300.00###1280.00','COLPAL###CE###1520.00###1510.00','TECHM###CE###720.00###710.00','VEDL###CE###167.50###165.00','KAJARIACER###CE###580.00###570.00','AMARAJABAT###CE###740.00###730.00','COALINDIA###CE###205.00###200.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
