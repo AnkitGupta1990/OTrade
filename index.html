@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Thu Oct 03 10:58:45 IST 2019
+Last Stocks Refresh : Fri Oct 04 14:40:51 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['GODREJCP###PE###670.00###690.00','CADILAHC###PE###230.00###235.00','CIPLA###PE###410.00###420.00','HAVELLS###PE###700.00###710.00','M&MFIN###PE###320.00###330.00','OIL###PE###142.50###145.00','AMBUJACEM###PE###195.00###200.00','TATACHEM###PE###580.00###590.00','HCLTECH###PE###1040.00###1060.00','TECHM###PE###700.00###710.00','ICICIPRULI###CE###470.00###460.00','M&M###CE###560.00###550.00','MARUTI###CE###6800.00###6700.00','MANAPPURAM###CE###135.00###132.50','LT###CE###1480.00###1460.00','INDIGO###CE###1900.00###1850.00','TATAELXSI###CE###680.00###670.00'];
+var list = ['HINDPETRO###PE###320.00###325.00','NBCC###PE###34.00###35.00','NESTLEIND###PE###13700.00###13800.00','TVSMOTOR###PE###400.00###410.00','IBULHSGFIN###PE###260.00###280.00','TORNTPHARM###PE###1580.00###1600.00','MGL###PE###880.00###900.00','GAIL###PE###130.00###132.50','ICICIBANK###PE###425.00###430.00','BHARTIARTL###PE###340.00###345.00','TORNTPOWER###CE###285.00###280.00','M&M###CE###570.00###560.00','ADANIPORTS###CE###405.00###400.00','CIPLA###CE###420.00###410.00','UPL###CE###600.00###590.00','BERGEPAINT###CE###430.00###425.00','CANBK###CE###185.00###180.00','HAVELLS###CE###710.00###700.00','STAR###CE###320.00###310.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
