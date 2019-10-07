@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Fri Oct 04 14:40:51 IST 2019
+Last Stocks Refresh : Mon Oct 07 13:10:43 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['HINDPETRO###PE###320.00###325.00','NBCC###PE###34.00###35.00','NESTLEIND###PE###13700.00###13800.00','TVSMOTOR###PE###400.00###410.00','IBULHSGFIN###PE###260.00###280.00','TORNTPHARM###PE###1580.00###1600.00','MGL###PE###880.00###900.00','GAIL###PE###130.00###132.50','ICICIBANK###PE###425.00###430.00','BHARTIARTL###PE###340.00###345.00','TORNTPOWER###CE###285.00###280.00','M&M###CE###570.00###560.00','ADANIPORTS###CE###405.00###400.00','CIPLA###CE###420.00###410.00','UPL###CE###600.00###590.00','BERGEPAINT###CE###430.00###425.00','CANBK###CE###185.00###180.00','HAVELLS###CE###710.00###700.00','STAR###CE###320.00###310.00'];
+var list = ['POWERGRID###PE###195.00###197.50','LT###PE###1420.00###1440.00','BPCL###PE###510.00###520.00','BAJAJ-AUTO###PE###2850.00###2900.00','NMDC###PE###95.00###97.50','KOTAKBANK###PE###1560.00###1580.00','BAJAJFINSV###PE###8300.00###8400.00','EQUITAS###PE###97.50###100.00','COLPAL###PE###1440.00###1450.00','AXISBANK###PE###650.00###660.00','PVR###CE###1780.00###1760.00','INDIGO###CE###1850.00###1800.00','BATAINDIA###CE###1680.00###1660.00','DIVISLAB###CE###1640.00###1620.00','IDFCFIRSTB###CE###39.00###38.00','CADILAHC###CE###235.00###230.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
