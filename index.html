@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Mon Oct 07 13:10:43 IST 2019
+Last Stocks Refresh : Mon Oct 14 17:04:01 IST 2019
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['POWERGRID###PE###195.00###197.50','LT###PE###1420.00###1440.00','BPCL###PE###510.00###520.00','BAJAJ-AUTO###PE###2850.00###2900.00','NMDC###PE###95.00###97.50','KOTAKBANK###PE###1560.00###1580.00','BAJAJFINSV###PE###8300.00###8400.00','EQUITAS###PE###97.50###100.00','COLPAL###PE###1440.00###1450.00','AXISBANK###PE###650.00###660.00','PVR###CE###1780.00###1760.00','INDIGO###CE###1850.00###1800.00','BATAINDIA###CE###1680.00###1660.00','DIVISLAB###CE###1640.00###1620.00','IDFCFIRSTB###CE###39.00###38.00','CADILAHC###CE###235.00###230.00'];
+var list = ['TCS###PE###1980.00###2000.00','M&M###PE###560.00###570.00','SRTRANSFIN###PE###1060.00###1080.00','BANKINDIA###PE###57.50###60.00','INFRATEL###PE###255.00###260.00','INDUSINDBK###PE###1220.00###1240.00','NTPC###PE###115.00###117.50','TATAELXSI###PE###630.00###640.00','RECLTD###PE###122.50###125.00','TATAPOWER###PE###61.00###62.00','ASIANPAINT###CE###1800.00###1780.00','HCLTECH###CE###1080.00###1060.00','DABUR###CE###450.00###445.00','BATAINDIA###CE###1720.00###1700.00','TATASTEEL###CE###340.00###330.00','COALINDIA###CE###190.00###185.00','TATAMOTORS###CE###125.00###120.00','HINDALCO###CE###190.00###185.00','BALKRISIND###CE###760.00###740.00','ONGC###CE###130.00###127.50'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
