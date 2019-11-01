@@ -40,7 +40,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 	<script> 
 	var stocks = [];
-	var today_stocks = ['MGL###CE###1020.00###1000.00','BANKINDIA###CE###72.50###70.00','GODREJCP###CE###740.00###730.00','BHEL###CE###59.00###58.00','ADANIPOWER###CE###67.00###66.00','NBCC###CE###38.00###37.00','TATAMTRDVR###CE###82.50###77.50','EXIDEIND###CE###182.50###180.00','GMRINFRA###CE###21.00###20.00'];
+	var today_stocks = ['EQUITAS###PE###92.50###95.00','MFSL###PE###400.00###410.00','YESBANK###CE###75.00###70.00','TATAGLOBAL###CE###320.00###315.00','OIL###CE###172.50###170.00','SBIN###CE###315.00###310.00','BALKRISIND###CE###900.00###880.00','ADANIENT###CE###200.00###195.00','RAMCOCEM###CE###790.00###780.00','PNB###CE###66.00###65.00','AMBUJACEM###CE###205.00###200.00'];
 	var ce_tbl_body = "";
 	var pe_tbl_body = "";
 	$.each(stocks, function(index,value) {
@@ -119,7 +119,7 @@
 						localStorage.getItem('auto_trade_stocks').indexOf('sell ' + value[0]) > 0) {
 				return true;
 			}
-			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=31OCT2019&type="+value[1]+"&strike="+value[2];
+			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=28NOV2019&type="+value[1]+"&strike="+value[2];
 			$.ajax({
 			  type: "GET",
 			  dataType: "json",
@@ -174,7 +174,7 @@
 	function refreshTodayStocks() {
 		$.each(today_stocks,function(index, value) {
 			value = value.split('###');
-			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=31OCT2019&type="+value[1]+"&strike="+value[2];
+			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=28NOV2019&type="+value[1]+"&strike="+value[2];
 			$.ajax({
 			  type: "GET",
 			  dataType: "json",
@@ -213,7 +213,7 @@
 	
 	function refreshAllStocks() {
 		$.each(stocks,function(index, value) {
-			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=31OCT2019&type="+value[1]+"&strike="+value[2];
+			var query = "underlying="+value[0]+"&instrument=OPTSTK&expiry=28NOV2019&type="+value[1]+"&strike="+value[2];
 			if($("#"+value[1]+"_"+value[0].replace("%26","_AND_")).length <= 0) {
 				return true;	
 			}
