@@ -6,7 +6,7 @@ td,th {
 </style>
 <body style="font-size:60px;">
 <div style="overflow-x: auto;">
-Last Stocks Refresh : Fri Dec 06 17:52:04 IST 2019
+Last Stocks Refresh : Thu Jan 02 16:06:49 IST 2020
 <div>Last Price Refresh : <span id="priceUpdateTime"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="font-size:60px;" onclick="location.reload()">Refresh</button>
 &nbsp;&nbsp;<a href="options.html"><button style="font-size:60px;">Options</button></a></div>
 CE
@@ -23,7 +23,7 @@ PE
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.0.1/dist/sheetrock.min.js"></script>
 <script> 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XFfFwISRvbOlIzVQxyAc7YlB_wTrC9cd5EpKB2Byoy4/edit#gid=0';
-var list = ['OIL###PE###157.50###160.00','HEXAWARE###PE###330.00###340.00','CHOLAFIN###PE###300.00###305.00','TORNTPOWER###PE###275.00###280.00','GRASIM###PE###760.00###780.00','NATIONALUM###PE###43.00###44.00','BHARTIARTL###PE###445.00###450.00','CUMMINSIND###PE###530.00###540.00','INDUSINDBK###PE###1500.00###1520.00','CASTROLIND###PE###135.00###137.50','TCS###CE###2140.00###2120.00','MFSL###CE###530.00###520.00','ICICIPRULI###CE###500.00###490.00','BHARATFORG###CE###450.00###440.00','AMARAJABAT###CE###740.00###730.00','DLF###CE###225.00###220.00','RECLTD###CE###135.00###130.00','HDFC###CE###2340.00###2320.00','UPL###CE###580.00###560.00','PETRONET###CE###275.00###270.00'];
+var list = ['CESC###PE###740.00###750.00','TATACHEM###PE###670.00###680.00','HINDPETRO###PE###265.00###270.00','JSWSTEEL###PE###265.00###270.00','NBCC###PE###34.00###35.00','TATASTEEL###PE###460.00###470.00','BANKBARODA###PE###100.00###102.50','EXIDEIND###PE###185.00###187.50','INDIGO###PE###1320.00###1340.00','PAGEIND###PE###23500.00###24000.00','NTPC###CE###122.00###121.00','BALKRISIND###CE###1000.00###980.00','MUTHOOTFIN###CE###770.00###760.00','TECHM###CE###770.00###760.00','DLF###CE###230.00###225.00','BAJFINANCE###CE###4300.00###4200.00','UJJIVAN###CE###350.00###340.00'];
 $('#resultsList').sheetrock({
   url: mySpreadsheet,
   query: 'select B,C,F,G,H,M where B is not null ',
