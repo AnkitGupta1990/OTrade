@@ -1,6 +1,6 @@
 const https = require('https');
 
-module.exports.home = async ( event , context ) => { 
+exports.handler = async ( event , context ) => { 
 	console.log("loading");
 	var result = await getLiveDataPromise(event.queryStringParameters.queryStr);
  	return { 
