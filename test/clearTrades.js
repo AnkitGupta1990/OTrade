@@ -48,7 +48,6 @@ console.log(queryStr)
     req.end();
   });
 }
-
 async function getLiveData() {
   try {
     let http_promise = getLiveDataPromise();
